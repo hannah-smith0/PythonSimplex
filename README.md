@@ -16,7 +16,7 @@ This is an example of a linear optimisation problem. Given some linear constrain
 ## How does it work?
 This picture shows a representation of a three-variable simplex. Faces of the simplex represent the variables and corners the potential solution. To solve the problem, you begin at the origin (0,0) and move along an edge to the most promising adjacent corner. This becomes the new pivot, and you repeat until your objective has been achieved. 
 
-<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/simplex.png" width="400">
+<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/simplex.png" width="400">
 
 [Figure1 https://web.stanford.edu/group/sisl/k12/optimization/MO-unit3-pdfs/]
 
@@ -31,7 +31,7 @@ Represented graphically, an inequality will look like a line with a shaded area 
 
 The inequality constraints are:
 
-<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/constraints.png">
+<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/constraints.png">
 
 What happens when we add the equality constraint, `-x+5y=15`? 
 We see this added as a line rather than a shaded area. Our optimal solution lies on the green line somewhere in the grey area.
@@ -70,16 +70,16 @@ Since we changed our equations to equalities, we need to represent the possible 
 * `3x1 - x2 + x5 = 0`
 Now we can set up the initial simplex tableau by creating a matrix from the equations, placing the equation for the objective function last. Since our objective function is being maximised, the coefficients from that equation are negative in the matrix. The constraints were all lesser (`<` or `≤`) so the slack variables have positive coefficients. We are aiming to maximise the bottom right cell’s value, since this is the objective function (labelled as `f` here).
 
-<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/t1.png">
+<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/iamges/t1.png">
 
 ### 3. Choose a pivot and 
 To find the pivot column, look in the bottom row for the most negative indicator.
 
-<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/t2.png">
+<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t2.png">
 
 To find the pivot row, choose the number above the bottom row that is neither negative nor 0, but has the smallest ratio when the answer is divided by that column. Below, we have `40 ÷ 5 = 8`, `10 ÷ 2 = 5`, or `0 ÷ 3 = 0`.
 
-<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/t3.png">
+<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t3.png">
 
 If you can’t find any numbers above 0 in a column with negative indicators, there isn’t a feasible solution for this problem. If there are two possible pivots, choose the higher one. After pivoting, the column value in the other row will become 0. If the basic variable in that row has negative coefficient, multiply the row by -1.
 
@@ -93,7 +93,7 @@ To make a number basic, it must transform to have a single number in the column,
 1. Fourth row = (3 * fourth row) - (-400 * pivot row)
 1. Divide the pivot row by the value in the pivot column so it becomes 1 (this step is optional)
 
-<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/t4.png">
+<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t4.png">
 
 ### 5. Repeat steps 3-4 until done
 If negative elements still exist in the bottom row, repeat steps 3 and 4.
@@ -103,7 +103,7 @@ If negative elements still exist in the bottom row, repeat steps 3 and 4.
 
 The tableau below is what you will end up with if you don’t divide the pivot rows to get a 1 in the column. If you do this, you simply need to divide the answer by whatever is in the column for each real variable.
 
-<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/t5.png">
+<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t5.png">
 
 When the final matrix has been obtained, determine the final basic solutions. This will give the maximum value for the objective function and the values of the variables where this maximum occurs
 
