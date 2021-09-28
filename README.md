@@ -70,7 +70,7 @@ Since we changed our equations to equalities, we need to represent the possible 
 * `3x1 - x2 + x5 = 0`
 Now we can set up the initial simplex tableau by creating a matrix from the equations, placing the equation for the objective function last. Since our objective function is being maximised, the coefficients from that equation are negative in the matrix. The constraints were all lesser (`<` or `≤`) so the slack variables have positive coefficients. We are aiming to maximise the bottom right cell’s value, since this is the objective function (labelled as `f` here).
 
-<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/iamges/t1.png">
+<img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t1.png">
 
 ### 3. Choose a pivot and 
 To find the pivot column, look in the bottom row for the most negative indicator.
