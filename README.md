@@ -1,7 +1,6 @@
 # PythonSimplex
-This contains code for performing operations using the Simplex algorithm using an Jupyter Notebook
+This repository contains code for performing operations using the Simplex algorithm using Python. For information on the Simplex algorithm, see below.
 
-# Coding the Simplex Algorithm
 ## What is the Simplex algorithm?
 Imagine you are a crafter who builds wooden products, like chairs and desks, who wants to maximise the profit on your work. Desks take 5 hours to build and need 2 hardwood panels, chairs take 3 hours and need 1 hardwood panel. Desks can be sold for a profit of $400 and chairs for a profit of $100. You have 10 panels and 40 hours a week to work on your products. Due to storage limits, you need to make at least 3 times as many chairs as desks. How can you work out how many chairs and desk to produce this week to maximise your profit?
 This is an example of a linear optimisation problem. Given some linear constraints (usually time, money, or resources), what is the best way to achieve your objective? An objective might be a maximisation of profits, or a minimisation of costs. This can be done using the simplex algorithm, which was first developed to solve military planning problems in World War 2. It was later refined and published by George B. Dantzig in 1947.
@@ -102,3 +101,10 @@ The tableau below is what you will end up with if you don’t divide the pivot r
 When the final matrix has been obtained, determine the final basic solutions. This will give the maximum value for the objective function and the values of the variables where this maximum occurs
 
 Using our tableau above, our solutions are `x1 = 10 ÷ 5 = 2`, `x2 = 6 ÷ 1 = 6`, `f = 21000 ÷ 15 = 1400`. This means our maximum profit is $1400. We can confirm this by checking against the original equation – if we make 2 desks and 6 chairs (which will fulfill our constrain of having at least 3 times as many chairs as desks) we will have `400x1 + 100x2` or `400×2 + 100 × 6 = 800 + 600 = 1400`. 
+
+## Sources
+1. Background info on the Simplex https://web.stanford.edu/group/sisl/k12/optimization/MO-unit3-pdfs/ 
+1. Ideas for how to display the Simplex tableau https://notebook.community/infimath/optimization-method/Simplex%20Tableau%20in%20Python 
+1. Information on Simplex in Python tools https://realpython.com/linear-programming-python/#linear-programming-examples
+1. The simplex and pivot algorithms [CLRS] Coreman, T. and Leiserson, C. and Rivest, R. and Stein, C. Linear Programming, Chapter 29 
+
