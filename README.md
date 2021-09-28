@@ -2,6 +2,7 @@
 This repository contains code for performing operations using the Simplex algorithm using Python. For information on the Simplex algorithm, see below.
 
 simplex.py contains the code
+
 example.py has an example and the expected output
 
 ## What is the Simplex algorithm?
