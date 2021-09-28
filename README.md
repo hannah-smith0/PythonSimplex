@@ -6,7 +6,10 @@ simplex.py contains the code
 example.py has an example and the expected output
 
 ## What is the Simplex algorithm?
-Imagine you are a crafter who builds wooden products, like chairs and desks, who wants to maximise the profit on your work. Desks take 5 hours to build and need 2 hardwood panels, chairs take 3 hours and need 1 hardwood panel. Desks can be sold for a profit of $400 and chairs for a profit of $100. You have 10 panels and 40 hours a week to work on your products. Due to storage limits, you need to make at least 3 times as many chairs as desks. How can you work out how many chairs and desk to produce this week to maximise your profit?
+Imagine you are a crafter who builds wooden products, like chairs and desks, who wants to maximise the profit on your work. Desks take 5 hours to build and need 2 hardwood panels, chairs take 3 hours and need 1 hardwood panel. Desks can be sold for a profit of $400 and chairs for a profit of $100. You have 10 panels and 40 hours a week to work on your products. Due to storage limits, you need to make at least 3 times as many chairs as desks. 
+
+How can you work out how many chairs and desk to produce this week to maximise your profit?
+
 This is an example of a linear optimisation problem. Given some linear constraints (usually time, money, or resources), what is the best way to achieve your objective? An objective might be a maximisation of profits, or a minimisation of costs. This can be done using the simplex algorithm, which was first developed to solve military planning problems in World War 2. It was later refined and published by George B. Dantzig in 1947.
 
 
