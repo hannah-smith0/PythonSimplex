@@ -91,7 +91,6 @@ To make a number basic, it must transform to have a single number in the column,
 1. `First row = (3 * first row) – (5 * pivot row)`
 1. `Second row = (3 * second row) - (2 * pivot row)`
 1. `Fourth row = (3 * fourth row) - (-400 * pivot row)`
-1. Divide the pivot row by the value in the pivot column so it becomes 1 (this step is optional)
 
 <img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t4.png">
 
@@ -101,11 +100,9 @@ If negative elements still exist in the bottom row, repeat steps 3 and 4.
 1.	`Third row = (5 * third row) - (-1/3 * pivot row)`
 1.	`Fourth row = (5 * fourth row) - (-700 * pivot row)`
 
-The tableau below is what you will end up with if you don’t divide the pivot rows to get a 1 in the column. If you do this, you simply need to divide the answer by whatever is in the column for each real variable.
-
 <img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t5.png">
 
-When the final matrix has been obtained, determine the final basic solutions. This will give the maximum value for the objective function and the values of the variables where this maximum occurs
+When the final matrix has been obtained, determine the final basic solutions. This will give the maximum value for the objective function and the values of the variables where this maximum occurs. You simply need to divide the value in the answer column by whatever is in the relevant column for each real variable. For this problem, this means our real variables `x1`, `x2`, `x3`, and the simplex column `f`.
 
 Using our tableau above, our solutions are `x1 = 10 ÷ 5 = 2`, `x2 = 6 ÷ 1 = 6`, `f = 21000 ÷ 15 = 1400`. This means our maximum profit is $1400. We can confirm this by checking against the original equation – if we make 2 desks and 6 chairs (which will fulfill our constrain of having at least 3 times as many chairs as desks) we will have `400x1 + 100x2` or `400×2 + 100 × 6 = 800 + 600 = 1400`. 
 
