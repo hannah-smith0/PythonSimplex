@@ -5,6 +5,8 @@ simplex.py contains the code
 
 example.py has an example and the expected output
 
+Video explaining the Simplex: https://youtu.be/EicjNC2D5Qg
+
 ## What is the Simplex algorithm?
 Imagine you are a crafter who builds wooden products, like chairs and desks, who wants to maximise the profit on your work. Desks take 5 hours to build and need 2 hardwood panels, chairs take 3 hours and need 1 hardwood panel. Desks can be sold for a profit of $400 and chairs for a profit of $100. You have 10 panels and 40 hours a week to work on your products. Due to storage limits, you need to make at least 3 times as many chairs as desks. 
 
@@ -14,13 +16,13 @@ This is an example of a linear optimisation problem. Given some linear constrain
 
 
 ## How does it work?
-This picture shows a representation of a three-variable simplex. Faces of the simplex represent the variables and corners the potential solution. To solve the problem, you begin at the origin (0,0) and move along an edge to the most promising adjacent corner. This becomes the new pivot, and you repeat until your objective has been achieved. 
+This picture shows a representation of a three-variable simplex.  This might be a crafter with three products (e.g. chairs, desk, and doors). Faces of the simplex represent the constraints (such as your time and the hardwood panels) and corners the potential solution. To solve the problem, you begin at the origin (0,0) and move along an edge to the most promising adjacent corner. This becomes the new pivot, and you repeat until your objective has been achieved. 
 
 <img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/simplex.png" width="400">
 
 [Figure1 https://web.stanford.edu/group/sisl/k12/optimization/MO-unit3-pdfs/]
 
-Simplex algorithms are capable of solving problems with many variables, but it is difficult to visualise them graphically past three variables. The method of solving them is the same. When working by hand, these ‘pivots’ are calculated using tableaus.
+Simplex algorithms are capable of solving problems with many variables, but it is difficult to visualise them graphically past three variables. For this reason, we use when working by hand, these ‘pivots’ are calculated using tableaus. However, the method of solving them is the same.
 
 Simplex algorithms require we turn inequality constraints into equality constraints. What is the difference? 
 Represented graphically, an inequality will look like a line with a shaded area to represent the parts where there are no solutions. The figure here has three constraints, and the grey area represents where there are solutions, called the feasible region.
@@ -104,7 +106,11 @@ If negative elements still exist in the bottom row, repeat steps 3 and 4.
 
 When the final matrix has been obtained, determine the final basic solutions. This will give the maximum value for the objective function and the values of the variables where this maximum occurs. You simply need to divide the value in the answer column by whatever is in the relevant column for each real variable. For this problem, this means our real variables `x1`, `x2`, and the simplex column `f`.
 
-Using our tableau above, our solutions are `x1 = 10 ÷ 5 = 2`, `x2 = 6 ÷ 1 = 6`, `f = 21000 ÷ 15 = 1400`. This means our maximum profit is $1400. We can confirm this by checking against the original equation – if we make 2 desks and 6 chairs (which will fulfill our constraint of having at least 3 times as many chairs as desks) we will have `400x1 + 100x2` or `400×2 + 100 × 6 = 800 + 600 = 1400`. 
+Using our tableau above, our solutions are 
+1. `x1 = 10 ÷ 5 = 2`
+1. `x2 = 6 ÷ 1 = 6`
+1. `f = 21000 ÷ 15 = 1400`
+This means our maximum profit is $1400. We can confirm this by checking against the original equation – if we make 2 desks and 6 chairs (which will fulfill our constraint of having at least 3 times as many chairs as desks) we will have `400x1 + 100x2` or `400×2 + 100 × 6 = 800 + 600 = 1400`. 
 
 ## Sources
 1. Background info on the Simplex https://web.stanford.edu/group/sisl/k12/optimization/MO-unit3-pdfs/ 
