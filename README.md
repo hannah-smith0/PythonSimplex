@@ -102,7 +102,7 @@ If negative elements still exist in the bottom row, repeat steps 3 and 4.
 
 <img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t5.png">
 
-When the final matrix has been obtained, determine the final basic solutions. This will give the maximum value for the objective function and the values of the variables where this maximum occurs. You simply need to divide the value in the answer column by whatever is in the relevant column for each real variable. For this problem, this means our real variables `x1`, `x2`, `x3`, and the simplex column `f`.
+When the final matrix has been obtained, determine the final basic solutions. This will give the maximum value for the objective function and the values of the variables where this maximum occurs. You simply need to divide the value in the answer column by whatever is in the relevant column for each real variable. For this problem, this means our real variables `x1`, `x2`, and the simplex column `f`.
 
 Using our tableau above, our solutions are `x1 = 10 ÷ 5 = 2`, `x2 = 6 ÷ 1 = 6`, `f = 21000 ÷ 15 = 1400`. This means our maximum profit is $1400. We can confirm this by checking against the original equation – if we make 2 desks and 6 chairs (which will fulfill our constrain of having at least 3 times as many chairs as desks) we will have `400x1 + 100x2` or `400×2 + 100 × 6 = 800 + 600 = 1400`. 
 
