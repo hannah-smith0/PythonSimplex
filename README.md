@@ -64,7 +64,7 @@ To use it in the initial tableau, rewrite the objective function to have all non
 
 * `Max⁡〖400x1 + 100x2 = 0〗`
 
-Since we changed our equations to equalities, we need to represent the possible difference in value that an inequality sign indicates. To do this, we add “slack” variables. All variables should go on the LHS of your equations, with constants on the RHS. We don’t need to convert the constraint x_1,x_2≥0, but we can assume all variables will be positive.
+Since we changed our equations to equalities, we need to represent the possible difference in value that an inequality sign indicates. To do this, we add “slack” variables. All variables should go on the LHS of your equations, with constants on the RHS. We don’t need to convert the constraint `x1`,`x2≥0`, but we can assume all variables will be positive.
 * `5x1 + 3x2 + x3 = 40`
 * `2x1 + x2 + x4 = 10`
 * `3x1 - x2 + x5 = 0`
@@ -84,22 +84,22 @@ To find the pivot row, choose the number above the bottom row that is neither ne
 If you can’t find any numbers above 0 in a column with negative indicators, there isn’t a feasible solution for this problem. If there are two possible pivots, choose the higher one. After pivoting, the column value in the other row will become 0. If the basic variable in that row has negative coefficient, multiply the row by -1.
 
 ### 4. Pivot
-Pivoting is done by moving from one vertex on the simplex to another by making one of our slack variables nonbasic, in exchange for making one of our “real” variables basic. The basic variables are the ones that are ‘in the basis’ around which our current table is pivoted. They are found in the columns where there is only one number and the rest are 0s. In our initial tableau, the basic variables are our slack variables x_3, x_4, x_5 and the objective function when it is equal to 0. This is how all simplex tableaus begin.
+Pivoting is done by moving from one vertex on the simplex to another by making one of our slack variables nonbasic, in exchange for making one of our “real” variables basic. The basic variables are the ones that are ‘in the basis’ around which our current table is pivoted. They are found in the columns where there is only one number and the rest are 0s. In our initial tableau, the basic variables are our slack variables `x3`, `x4`, `x5` and the objective function when it is equal to 0. This is how all simplex tableaus begin.
 
 To make a number basic, it must transform to have a single number in the column, with the rest being zeros. You can multiply or divide any row by any number or replace any row with a sum of itself and another row. However, you must include the pivot row in these operations and the answer column must always remain positive. If you do get a negative value there, multiply that row by -1.
   
-1. First row = (3 * first row) – (5 * pivot row)
-1. Second row = (3 * second row) - (2 * pivot row)
-1. Fourth row = (3 * fourth row) - (-400 * pivot row)
+1. `First row = (3 * first row) – (5 * pivot row)`
+1. `Second row = (3 * second row) - (2 * pivot row)`
+1. `Fourth row = (3 * fourth row) - (-400 * pivot row)`
 1. Divide the pivot row by the value in the pivot column so it becomes 1 (this step is optional)
 
 <img src="https://github.com/hannah-smith0/PythonSimplex/blob/main/images/t4.png">
 
 ### 5. Repeat steps 3-4 until done
 If negative elements still exist in the bottom row, repeat steps 3 and 4.
-1.	First row = (5 * first row) – (14 * pivot row)
-1.	Third row = (5 * third row) - (-1/3 * pivot row)
-1.	Fourth row = (5 * fourth row) - (-700 * pivot row)
+1.	`First row = (5 * first row) – (14 * pivot row)`
+1.	`Third row = (5 * third row) - (-1/3 * pivot row)`
+1.	`Fourth row = (5 * fourth row) - (-700 * pivot row)`
 
 The tableau below is what you will end up with if you don’t divide the pivot rows to get a 1 in the column. If you do this, you simply need to divide the answer by whatever is in the column for each real variable.
 
